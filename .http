@@ -1,0 +1,29 @@
+GET http://127.0.0.1:8787/
+
+###
+
+GET http://127.0.0.1:8787/api/users?pretty
+
+###
+
+POST http://127.0.0.1:8787/api/users
+content-type: application/json
+
+{
+	"name": "postman",
+	"content": "api send test."
+}
+
+###
+
+PUT http://127.0.0.1:8787/api/users/2
+content-type: application/json
+
+{
+	"name":"ota",
+	"content":"waaa"
+}
+
+###
+
+DELETE http://127.0.0.1:8787/api/users/4
