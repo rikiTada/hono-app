@@ -1,10 +1,10 @@
 import { Hono } from 'hono';
 import { html } from 'hono/html';
-import { jsx, Fragment } from 'hono/jsx';
+import { jsx, Fragment, Child } from 'hono/jsx';
 
 const app = new Hono();
 
-const Layout = (props: { children: any }) => html`
+const Layout = ({ children }: { children: Child }) => html`
   <!DOCTYPE html>
   <html lang="ja">
     <head>
@@ -13,11 +13,11 @@ const Layout = (props: { children: any }) => html`
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <title>Cloudflare with Hono</title>
       <script src="https://cdn.tailwindcss.com"></script>
-      <link rel="stylesheet" href="https://playground.devprod.cloudflare.dev/welcome-style.css" />
+      <link rel="stylesheet" href="https://rikitada.github.io/hono-app/src/index.css" />
     </head>
 
     <body>
-      ${props.children}
+      ${children}
     </body>
   </html>
 `;
